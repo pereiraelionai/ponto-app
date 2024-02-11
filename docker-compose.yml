@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+
+  laravel-docker:
+    build: ./
+    ports:
+      - 9000:80
+    volumes:
+      - ./:/usr/share/nginx/html
+    restart: always
+    environment: 
+      DB_URL: mysql://docker:docker@db/ponto-app
+    networks:
+      - docker
+
+  db:
+    image: mysql
+    restart: always
+    ports:
+      - 3308:3306
+    volumes:
+      - dados:/data/db      
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: ponto-app
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    networks:
+      - docker
+
+networks:
+  docker:
+    driver: bridge
+    
+volumes:
+  dados:
