@@ -1,6 +1,6 @@
-# Sistema para registro de ponto
+# Descrição
 
-Desenvolvi esse sistema para melhorar minhas habilidades como desenvolvedor e incrementar meu portifólio de desenvolvimento.
+Sistema para registro de ponto
 
 ## Características do sistema
 
